@@ -79,6 +79,10 @@ body {
   vertical-align: middle;
 }
 
+.button-card-text {
+  margin-right: 5px;
+}
+
 .promo {
   box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
   background: #FFF1B8 url(../images/pizza.png) no-repeat top 0px right -150px / 820px;
@@ -111,7 +115,6 @@ body {
 .section-heading {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 44px;
 }
 
@@ -122,11 +125,13 @@ body {
   line-height: 42px;
   color: #000000;
   margin: 0;
+  margin-right: 30px;
 }
 
 .input-search {
   width: 300px;
   background-image: url(../images/search.svg);
+  margin-left: auto;
 }
 
 .cards {
@@ -143,7 +148,10 @@ body {
   overflow: hidden;
   margin-bottom: 30px;
   cursor: pointer;
+  text-decoration: none;
 }
+
+
 
 .card:hover {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
@@ -173,6 +181,12 @@ body {
   line-height: 32px;
 }
 
+.card-title-reg {
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 22px;
+}
+
 .card-tag {
   font-style: normal;
   font-weight: normal;
@@ -188,6 +202,19 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.card-price-bold {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  margin-left: 30px;
+}
+
+.card-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
 }
 
 .rating {
@@ -210,6 +237,12 @@ body {
   overflow: hidden;
   white-space: nowrap;
   max-width: 150px;
+}
+
+.ingredients {
+  color: #8c8c8c;
+  font-size: 16px;
+  line-height: 21px;
 }
 
 .price {
@@ -264,6 +297,126 @@ body {
 .footer-link:not(:last-child) {
   margin-right: 15px;
 }
+
+/* Модальное окно */
+.modal {
+  
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* display: flex; */ /* (1) Для выравнивания мод.окна по центру */
+  display: none;
+}
+
+.is-open {
+  display: flex;
+}
+
+.modal-dialog {
+  max-width: 780px;
+  width: 95%;
+  background: #FFFFFF;
+  border-radius: 5px;
+  margin: auto; /* (1) Для выравнивания мод.окна по центру */
+  padding: 40px 45px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.modal-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.close {
+  font-size: 36px;
+  border: none;
+  background-color: transparent;
+}
+
+.modal-body {
+  margin-bottom: 52px;
+}
+
+.food-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 15px;
+}
+
+.food-name {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.food-price {
+  margin-left: auto;
+  margin-right: 47px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.food-counter {
+  display: flex;
+  align-items: center;
+}
+
+.counter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid #40A9FF;
+  border-radius: 2px;
+  color: #40A9FF;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.counter {
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.modal-price-tag {
+  background-color: #262626;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 15px 20px;
+}
+
+
 
 @media (max-width: 1366px) { /* Ноутбук */
   .container {
@@ -334,7 +487,7 @@ body {
     flex-wrap: wrap;
   }
 
-  .rating {
+  .card .rating {
     flex-basis: 100%;
   }
 
@@ -366,7 +519,7 @@ body {
     margin-bottom: 10px;
   }
 
-  .section-title {
+  .tion-title {
     font-size: 20px;
   }
 
